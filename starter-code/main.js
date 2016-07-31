@@ -1,3 +1,4 @@
+/*
 var cardOne = "queen";
 var cardTwo = "queen";
 var cardThree = "king";
@@ -23,3 +24,21 @@ if (cardThree === cardFour) {
 else {
 	alert("Sorry, try again.");
 }
+*/
+
+var board = document.getElementById('game-board');
+
+var numCards = 4;
+
+
+
+function createBoard() {
+	for (var i = 0; i < numCards; i++) {
+		var card = document.createElement('div');
+		card.className = 'card';
+		board.appendChild(card);
+	}
+}
+
+createBoard();
+
