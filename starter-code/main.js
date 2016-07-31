@@ -13,20 +13,20 @@ function createBoard() {
 		card.className = 'card';
 		card.setAttribute('data-card', cards[i]);
 		board.appendChild(card);
-		card.addEventListener('click', isTwoCards)
+		card.addEventListener('click', isTwoCards);
 	}
 }
 
 function isTwoCards() {
-  cardsInPlay.push(this.getAttribute('data-card'));
-  if (cardsInPlay.length === 2) {
-    isMatch(cardsInPlay);
-    cardsInPlay = [];
-  }
+	cardsInPlay.push(this.getAttribute('data-card'));
+	if (cardsInPlay.length === 2) {
+		isMatch(cardsInPlay);
+		cardsInPlay = [];
+	}
 }
 
 function isMatch(cardsInPlay) {
-	if (cardsInPlay[0] === cardsinPlay[1]) {
+	if (cardsInPlay[0] === cardsInPlay[1]) {
 		alert("You found a match!");
 		return true;
 	} else {
