@@ -3,6 +3,7 @@ var board = document.getElementById('game-board');
 var numCards = 4;
 
 var cards = ['queen', 'queen', 'king', 'king'];
+var suits = ['clubs', 'diamonds', 'clubs', 'diamonds'];
 var cardsInPlay = [];
 
 
@@ -12,13 +13,17 @@ function createBoard() {
 		var card = document.createElement('div');
 		card.className = 'card';
 		card.setAttribute('data-card', cards[i]);
+		card.setAttribute('suit', suits[i]);
 		board.appendChild(card);
 		card.addEventListener('click', isTwoCards);
 	}
 }
 
 function isTwoCards() {
-	cardsInPlay.push(this.getAttribute('data-card'));
+	var cardType = this.getAttribute('data-card');
+	var cardSuit = this.getAttribute('suit');
+	this.innerHTML = '<img src="img/' + cardType + '_' + cardSuit + '.png" alt="' + cardType + ' of ' + cardSuit + '" />';
+	cardsInPlay.push(cardType);
 	if (cardsInPlay.length === 2) {
 		isMatch(cardsInPlay);
 		cardsInPlay = [];
@@ -28,10 +33,12 @@ function isTwoCards() {
 function isMatch(cardsInPlay) {
 	if (cardsInPlay[0] === cardsInPlay[1]) {
 		alert("You found a match!");
-		return true;
 	} else {
 		alert("Sorry, try again.");
-		return false;
+	}
+	var allCards = document.getElementsByClassName('card');
+	for (var i = 0; i < allCards.length; i++ ) {
+		allCards[i].innerHTML = '';
 	}
 }
 
