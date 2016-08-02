@@ -2,9 +2,9 @@
 
 ## Notes
 
-The master branch contains the homework as assigned.
+The [master](https://github.com/rebekahheacock/wdi-fundamentals-memorygame/tree/master) branch contains the homework as assigned.
 
-The rhj branch expands on the homework with additional styling and functionality.
+The [rhj](https://github.com/rebekahheacock/wdi-fundamentals-memorygame/tree/rhj) branch expands on the homework with additional styling and functionality.
 
 ## Memory Game: Unit Homework for WDI Fundamentals
 
