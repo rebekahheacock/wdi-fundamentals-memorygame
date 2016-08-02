@@ -10,11 +10,15 @@ var cardsInPlay = [];
 
 function createBoard() {
 	for (var i = 0; i < numCards; i++) {
+		var cardBox = document.createElement('div');
+		cardBox.className = 'cardbox';
+		
 		var card = document.createElement('div');
 		card.className = 'card';
 		card.setAttribute('data-card', cards[i]);
 		card.setAttribute('suit', suits[i]);
-		board.appendChild(card);
+		cardBox.appendChild(card);
+		board.appendChild(cardBox);
 		card.addEventListener('click', isTwoCards);
 	}
 }
@@ -22,6 +26,7 @@ function createBoard() {
 function isTwoCards() {
 	var cardType = this.getAttribute('data-card');
 	var cardSuit = this.getAttribute('suit');
+	this.className += ' flipped';
 	this.innerHTML = '<img src="img/' + cardType + '_' + cardSuit + '.png" alt="' + cardType + ' of ' + cardSuit + '" />';
 	cardsInPlay.push(cardType);
 	if (cardsInPlay.length === 2) {
