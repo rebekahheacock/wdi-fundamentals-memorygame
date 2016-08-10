@@ -2,12 +2,12 @@ html {
 	box-sizing: border-box;
 }
 
-header, p, footer {
-	text-align: center;
-}
-
 *, *:before, *:after {
 	box-sizing: inherit;
+}
+
+header, p, footer {
+	text-align: center;
 }
 
 body {
